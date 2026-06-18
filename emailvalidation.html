@@ -6,17 +6,31 @@
     </head>
 <body>
     <form>
-        <input type="text" name="email" id="email"/>
-        <input type="password" name="password" id="password"/>
+        <input type="text" name="email" id="email" placeholder="Email"/>
+        <input type="text" name="phone" id="phone" placeholder="Phone Number"/>
+        <input type="password" name="password" id="password" placeholder="Password"/>
         <input type="button" value="login" onclick="validateEmail()"/>
     </form>
+
     <script type="text/javascript">
         function validateEmail(){
             var inputText = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var phoneformat = /^[0-9]{10}$/;
+
             if(inputText.match(mailformat)){
-                alert("Valid email address!");
-                return true;
+                
+                if(phone.match(phoneformat)){
+                    alert("Valid email address and phone number!");
+                    return true;
+                }
+                else{
+                    alert("Phone number must be exactly 10 digits!");
+                    return false;
+                }
+
             }
             else{
                 alert("You have entered an invalid email address!");
