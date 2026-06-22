@@ -8,6 +8,7 @@
     <form>
         <input type="text" name="email" id="email" placeholder="Email"/>
         <input type="number" name="phone" id="phone" placeholder="Phone Number"/>
+        <input type="number" name="age" id="age" placeholder="Age"/>
         <input type="password" name="password" id="password" placeholder="Password"/>
         <input type="button" value="login" onclick="validateEmail()"/>
     </form>
@@ -16,14 +17,22 @@
         function validateEmail(){
             var inputText = document.getElementById("email").value;
             var phone = document.getElementById("phone").value;
-
+            var age = document.getElementById("age").value;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             var phoneformat = /^[0-9]{10}$/;
+            var ageformat = /^[0-3]{1,3}$/;
 
             if(inputText.match(mailformat)){
                 
                 if(phone.match(phoneformat)){
-                    alert("Valid email address and phone number!");
+                    if(age.match(ageformat)){
+                        alert("Valid email address, phone number, and age!");
+                        return true;
+                    }
+                    else{
+                        alert("Age must be a number between 1 and 999!");
+                        return false;
+                    }
                     return true;
                 }
                 else{
