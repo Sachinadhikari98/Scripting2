@@ -1,72 +1,78 @@
 <html>
-    <head>
-        <title>
-            Form
-        </title>
-        <style>
-            #username_error, #password_error, #phone_error, #email_error{
-                color: red;
-            }
-        </style>
-        <script>
 
-            function validateForm(){
-                let errorFlag = false;
-                let username = document.getElementById("username").value;
-                let password = document.getElementById("password").value;
-                let phone = document.getElementById("phone").value;
-                let email = document.getElementById("email").value;
-                if (username == ""){
-                    document.getElementById("username_error").innerText = "*Username is required";
-                    errorFlag = true;
-                }
-                if (password == ""){
-                    document.getElementById("password_error").innerText = "*Password is required";
-                    errorFlag = true;
-                }
-                if (phone == ""){
-                    document.getElementById("phone_error").innerText = "*Phone number is required";
-                    errorFlag = true;
-                }
-                if (email == ""){
-                    document.getElementById("email_error").innerText = "*Email is required";
-                    errorFlag = true;
-                }
-                if(errorFlag){
-                    return false;
-                }
-                return true;
+<head>
+    <title>
+        Form
+    </title>
+    <style>
+        #username_error,
+        #password_error,
+        #phone_error,
+        #email_error {
+            color: red;
+        }
+    </style>
+    <script>
+
+        function validateForm() {
+            let errorFlag = false;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            if (username == "") {
+                document.getElementById("username_error").innerText = "*Username is required";
+                errorFlag = true;
             }
-            function clearError(){
-                document.getElementById("username_error").innerText = "";
+            if (password == "") {
+                document.getElementById("password_error").innerText = "*Password is required";
+                errorFlag = true;
             }
-            </script>
-    </head>
-    <body>
-        <form action ="" method="post" onsubmit="return validateForm()" onchange="clearError()">
-            <div>
-                <label>Username</label>
-                <input type="text" name ="username" id="username"/>
-                <span id="username_error"></span>
-            </div>
-            <div>
-                <label>Password</label>
-                <input type="password" name ="password" id="password"/>
-                <span id="password_error"></span>
-            </div>
-            <div>
-                <label>Phone Number</label>
-                <input type="number" name="phone" id="phone">
-                <span id="phone_error"></span>
-            </div>
-            <div>
-                <label>Email</label>
-                <input type="Email" name="email" id="email">
-                <span id="email_error"></span>
-            </div>
-            <div>
-                <input type="submit" id="submit" value="Submit"/>
-            </div>
-        </form>
-    </body>
-    </html>
+            if (phone == "") {
+                document.getElementById("phone_error").innerText = "*Phone number is required";
+                errorFlag = true;
+            }
+            if (email == "") {
+                document.getElementById("email_error").innerText = "*Email is required";
+                errorFlag = true;
+            }
+            if (errorFlag) {
+                return false;
+            }
+            return true;
+        }
+        function clearError() {
+            document.getElementById("username_error").innerText = "";
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="post" onsubmit="return validateForm()" onchange="clearError()">
+        <div>
+            <label>Username</label>
+            <input type="text" name="username" id="username" />
+            <span id="username_error"></span>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" id="password" />
+            <span id="password_error"></span>
+        </div>
+        <div>
+            <label>Phone Number</label>
+            <input type="number" name="phone" id="phone">
+            <span id="phone_error"></span>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="Email" name="email" id="email">
+            <span id="email_error"></span>
+        </div>
+        <div>
+            <input type="submit" id="submit" value="Submit" />
+        </div>
+    </form>
+</body>
+
+</html>
