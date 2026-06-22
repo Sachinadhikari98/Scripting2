@@ -9,6 +9,7 @@
             }
         </style>
         <script>
+
             function validateForm(){
                 let errorFlag = false;
                 let username = document.getElementById("username").value;
@@ -36,10 +37,13 @@
                 }
                 return true;
             }
+            function clearError(){
+                document.getElementById("username_error").innerText = "";
+            }
             </script>
     </head>
     <body>
-        <form action ="" method="post" onsubmit="return validateForm()">
+        <form action ="" method="post" onsubmit="return validateForm()" onchange="clearError()">
             <div>
                 <label>Username</label>
                 <input type="text" name ="username" id="username"/>
@@ -65,3 +69,4 @@
             </div>
         </form>
     </body>
+    </html>
