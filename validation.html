@@ -10,26 +10,31 @@
         </style>
         <script>
             function validateForm(){
+                let errorFlag = false;
                 let username = document.getElementById("username").value;
                 let password = document.getElementById("password").value;
                 let phone = document.getElementById("phone").value;
                 let email = document.getElementById("email").value;
                 if (username == ""){
-                    document.getElementById("username_error").innerText = "Username is required";
-                    return false;
+                    document.getElementById("username_error").innerText = "*Username is required";
+                    errorFlag = true;
                 }
                 if (password == ""){
-                    document.getElementById("password_error").innerText = "Password is required";
-                    return false;
+                    document.getElementById("password_error").innerText = "*Password is required";
+                    errorFlag = true;
                 }
                 if (phone == ""){
-                    document.getElementById("phone_error").innerText = "Phone number is required";
-                    return false;
+                    document.getElementById("phone_error").innerText = "*Phone number is required";
+                    errorFlag = true;
                 }
                 if (email == ""){
-                    document.getElementById("email_error").innerText = "Email is required";
+                    document.getElementById("email_error").innerText = "*Email is required";
+                    errorFlag = true;
+                }
+                if(errorFlag){
                     return false;
                 }
+                return true;
             }
             </script>
     </head>
