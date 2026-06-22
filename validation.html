@@ -13,7 +13,11 @@
         }
     </style>
     <script>
-
+        var usernameElement = document.getElementById("username");
+        usernameElement.addEventListener("oninput",() => {
+            document.getElementById("username_error").innerText = "";
+        });
+        
         function validateForm() {
             let errorFlag = false;
             let username = document.getElementById("username").value;
