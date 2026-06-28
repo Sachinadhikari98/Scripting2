@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse print </title>
+</head>
+<body>
+    <form>
+        Enter first and last name: 
+        <input type="text" id="name" placeholder ="Full name"/>
+        <input type ="button" value="Reverse Name" onclick="reverseName()"/>
+    </form>
+    <h3 id="result"></h3>
+    <script>
+        function reverseName() {
+            var name = document.getElementById("name").value;
+            var words = name.split(" ");
+            words.reverse();
+            document.getElementById("result").innerText = words.join(" ");
+        }
+    </script>
+</body>
+</html>
