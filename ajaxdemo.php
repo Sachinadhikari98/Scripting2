@@ -15,4 +15,9 @@
                     }
                 });
             });
-        })
+        });
+    </script>
+</head>
+<body>
+    <button>Load data</button>
+    <p id="para"></p>
